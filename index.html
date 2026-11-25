@@ -88,6 +88,16 @@ th,td{text-align:left;padding:.5rem .65rem;border-bottom:1px solid var(--line)}
 th{color:var(--muted);font-weight:600}
 
 /* Optional video */
+.vid{margin:1.5rem 0}
+.vid .tag{font-size:.85rem;color:var(--muted);margin:0 0 .4rem}
+.vid-frame{position:relative;aspect-ratio:16/9;background:#2e2621;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.vid-frame iframe,.vid-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.vid-load{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:#2e2621 center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.vid-load::before{content:"";position:absolute;inset:0;background:rgba(26,21,18,.35)}
+.vid-play{position:relative;display:flex;align-items:center;gap:.6rem;background:#8c3519;color:#fff;border-radius:999px;padding:.6rem 1.1rem;font-weight:600}
+.vid-play svg{width:1rem;height:1rem;fill:#fff}
+.vid-cap{font-size:.92rem;color:var(--muted);margin:.5rem 0 0}
+.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
 .video{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:.85rem 1rem;margin:1.25rem 0}
 .video .tag{font-size:.82rem;color:var(--muted);margin:0}
 .video p{margin:0}
@@ -111,7 +121,7 @@ th{color:var(--muted);font-weight:600}
   body{font-size:11pt}
   strong,.formula,.readout{color:#000}
   .lede{color:#222}
-  .hero-stripes,.reveal,.controls,.slider-row,.video{display:none}
+  .hero-stripes,.reveal,.controls,.slider-row,.video,.vid{display:none}
   .answer[hidden]{display:block}
   .part{padding:1.25rem 0}
   .check,.callout,.figure,.notebook{break-inside:avoid}
@@ -130,7 +140,7 @@ th{color:var(--muted);font-weight:600}
   <div class="hero-text">
     <p class="course">Earth Systems Science, Unit 4.1</p>
     <h1>Plate Tectonics: Theory, Evidence &amp; Mechanism</h1>
-    <p class="lede">In 1915, Alfred Wegener claimed the continents had moved, and he had good evidence. Most geologists still said no. It took a map of the seafloor, a magnetic barcode, and a new look at Earth’s interior heat to change their minds.</p>
+    <p class="lede">In 1912, Alfred Wegener claimed the continents had moved, and he had good evidence. Most geologists still said no. It took a map of the seafloor, a magnetic barcode, and a new look at Earth’s interior heat to change their minds.</p>
   </div>
 </header>
 
@@ -164,7 +174,7 @@ th{color:var(--muted);font-weight:600}
   <div class="content">
     <p class="part-num">Part 1</p>
     <h2 id="p1-h">Continents that fit together</h2>
-    <p>Look at a world map and the east coast of South America seems to tuck into the west coast of Africa. People noticed this as soon as decent maps existed. In 1915, the German scientist Alfred Wegener went much further. He proposed <span class="term">continental drift</span>: the idea that all the continents were once joined in a single supercontinent he called <span class="term">Pangaea</span> (“all lands”), which later broke apart.</p>
+    <p>Look at a world map and the east coast of South America seems to tuck into the west coast of Africa. People noticed this as soon as decent maps existed. In 1912, the German scientist Alfred Wegener went much further, and he laid out the full argument in a 1915 book. He proposed <span class="term">continental drift</span>: the idea that all the continents were once joined in a single supercontinent he called <span class="term">Pangaea</span> (“all lands”), which later broke apart.</p>
     <p>The fit alone wasn’t proof. Coastlines change as sea level rises and falls. (The fit is actually best along the edges of the continental shelves, underwater, which are the true edges of the continents.) So Wegener gathered other kinds of evidence.</p>
 
     <h4>Wegener’s evidence</h4>
@@ -210,6 +220,13 @@ th{color:var(--muted);font-weight:600}
     <p>Wegener’s evidence showed <em>that</em> the continents had moved. It didn’t show <em>how</em>. Every scientific theory needs a <span class="term">mechanism</span>: a process that explains how the thing happens. Wegener suggested the continents plowed through the ocean floor like ships through ice, driven by forces from Earth’s spin and the slow wobble of its axis. Physicists calculated that those forces were far too weak, and that continents couldn’t plow through solid ocean rock without crumpling. Most geologists, especially in North America, rejected the whole idea.</p>
     <p>A few scientists kept working on it. In the late 1920s, the British geologist Arthur Holmes suggested that slow currents of heat in the mantle could carry continents along. It was a good guess, but there wasn’t enough evidence yet to test it. Wegener died on an expedition in Greenland in 1930, decades before his central idea was accepted.</p>
 
+    <div class="video">
+      <div>
+        <p class="tag">Optional animation</p>
+        <p><a href="https://www.iris.edu/hq/inclass/animation/plate_tectonic_theorya_brief_history" target="_blank" rel="noopener">Plate Tectonic Theory: A Brief History</a> (EarthScope/IRIS). The scientists who argued for and against moving continents, from 1596 to the 1960s. Opens on the IRIS site.</p>
+      </div>
+    </div>
+
     <div class="check">
       <h4>Check yourself</h4>
       <ol>
@@ -244,6 +261,15 @@ th{color:var(--muted);font-weight:600}
     <p class="part-num">Part 2</p>
     <h2 id="p2-h">The seafloor tells the story</h2>
     <p>Until the 1940s, almost nobody knew what the ocean floor looked like. During and after World War II, ships used sonar to measure ocean depths, and the results were a surprise. In the 1950s, Marie Tharp and Bruce Heezen turned those measurements into the first detailed maps of the seafloor. Tharp noticed a deep valley running down the center of the <span class="term">mid-ocean ridge</span>, an underwater mountain range that winds about 65,000 km around the globe.</p>
+    <figure class="vid" style="margin-left:0;margin-right:0">
+      <p class="tag">Optional video</p>
+      <div class="vid-frame">
+        <button class="vid-load" type="button" data-yt="TgfYjS0OTWw" data-title="Marie Tharp and the first map of the ocean floor" style="background-image:url('https://i.ytimg.com/vi/TgfYjS0OTWw/hqdefault.jpg')" aria-label="Play video: Marie Tharp and the first map of the ocean floor">
+          <span class="vid-play"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1 L9 5 L2 9z"/></svg>Play video</span>
+        </button>
+      </div>
+      <figcaption class="vid-cap">Marie Tharp’s story and how her seafloor maps changed geology (about 4 minutes). This is the video linked in the Johnson <em>Introduction to Geology</em> textbook.</figcaption>
+    </figure>
 
     <h4>Seafloor spreading</h4>
     <p>Around 1960, the geologist Harry Hess put the pieces together. He proposed <span class="term">seafloor spreading</span>: magma rises at the mid-ocean ridge, cools into new ocean crust, and pushes older crust away on both sides. The seafloor moves away from the ridge like two conveyor belts heading in opposite directions. Hess also proposed that old seafloor sinks back into the mantle at deep ocean <span class="term">trenches</span>. That’s how Earth makes new crust without getting any bigger. (You’ll study trenches in 4.2.)</p>
@@ -289,8 +315,8 @@ th{color:var(--muted);font-weight:600}
 
     <div class="video">
       <div>
-        <p class="tag">Optional video</p>
-        <p><a href="https://www.iris.edu/hq/inclass/animation/plate_movement__200_million_years_ago_to_today" target="_blank" rel="noopener">Plate movement, 200 million years ago to today</a> (EarthScope/IRIS animation). Watch the youngest seafloor form at the ridges as the Atlantic opens.</p>
+        <p class="tag">Optional animation</p>
+        <p><a href="https://www.iris.edu/hq/inclass/animation/plate_movement__200_million_years_ago_to_today" target="_blank" rel="noopener">Plate movement, 200 million years ago to today</a> (EarthScope/IRIS animation). Watch the youngest seafloor form at the ridges as the Atlantic opens. Opens on the IRIS site.</p>
       </div>
     </div>
 
@@ -478,6 +504,21 @@ th{color:var(--muted);font-weight:600}
       <li><span class="term">Slab pull</span>: As an ocean plate ages, it cools and becomes denser. At a trench, the old, cold, dense edge sinks into the mantle and drags the rest of the plate along behind it, like a tablecloth sliding off a table once enough of it hangs over the edge.</li>
     </ul>
     <p>Geologists still debate exactly how much each force contributes, but <strong>most think ridge push and slab pull do most of the work</strong>. The best clue: plates attached to sinking slabs, like the Pacific, Australian, and Nazca plates, move the fastest, while plates without one, like the North American and African plates, move much more slowly.</p>
+    <figure class="vid" style="margin-left:0;margin-right:0">
+      <p class="tag">Optional video clips</p>
+      <div class="clips">
+        <div>
+          <div class="vid-frame"><video controls muted loop playsinline preload="none" src="https://www.iris.edu/hq/inclass/uploads/GIF_PlateDriver_PushPull.mp4" aria-label="Animation clip: ridge push and slab pull acting on a plate"></video></div>
+          <p class="vid-cap">Ridge push and slab pull acting on a plate</p>
+        </div>
+        <div>
+          <div class="vid-frame"><video controls muted loop playsinline preload="none" src="https://www.iris.edu/hq/inclass/uploads/GIF_mantleConvection.mp4" aria-label="Animation clip: mantle convection in 3D"></video></div>
+          <p class="vid-cap">Mantle convection in 3D</p>
+        </div>
+      </div>
+      <figcaption class="vid-cap">Short clips from <a href="https://www.iris.edu/hq/inclass/animation/what_are_the_forces_that_drive_plate_tectonics" target="_blank" rel="noopener">What Are the Forces that Drive Plate Tectonics?</a> (EarthScope/IRIS, CC BY 4.0). The full 7½-minute animation opens on the IRIS site.</figcaption>
+    </figure>
+
     <p>Convection still matters, though. Without rising hot rock there would be no ridges to push from, and the North American plate keeps moving even though no part of it is sinking. (You’ll learn more about why ocean plates are denser in 4.2.)</p>
 
     <div class="check">
@@ -518,6 +559,7 @@ th{color:var(--muted);font-weight:600}
     <ul class="sources">
       <li>Johnson, Affolter, Inkenbrandt &amp; Mosher, <em>An Introduction to Geology</em>, Geosciences LibreTexts (CC BY-NC-SA 4.0): <a href="https://geo.libretexts.org/Bookshelves/Geology/Book:_An_Introduction_to_Geology_(Johnson_Affolter_Inkenbrandt_and_Mosher)/02:_Plate_Tectonics/2.01:_Alfred_Wegeners_Continental_Drift_Hypothesis" target="_blank" rel="noopener">2.1 Alfred Wegener’s Continental Drift Hypothesis</a>, <a href="https://geo.libretexts.org/Bookshelves/Geology/Book:_An_Introduction_to_Geology_(Johnson_Affolter_Inkenbrandt_and_Mosher)/02:_Plate_Tectonics/2.02:_Layers_of_the_Earth" target="_blank" rel="noopener">2.2 Layers of the Earth</a>, and <a href="https://geo.libretexts.org/Bookshelves/Geology/Book:_An_Introduction_to_Geology_(Johnson_Affolter_Inkenbrandt_and_Mosher)/02:_Plate_Tectonics/2.07:_Hotspots" target="_blank" rel="noopener">2.7 Hotspots</a>.</li>
       <li>Earle, <em>Physical Geology</em>, Geosciences LibreTexts (CC BY 4.0): <a href="https://geo.libretexts.org/Bookshelves/Geology/Physical_Geology_(Earle)/10%3A_Plate_Tectonics/10.05%3A_Mechanisms_for_Plate_Motion" target="_blank" rel="noopener">10.5 Mechanisms for Plate Motion</a>.</li>
+      <li>EarthScope Consortium (IRIS), <a href="https://www.iris.edu/hq/inclass/animation/what_are_the_forces_that_drive_plate_tectonics" target="_blank" rel="noopener">What Are the Forces that Drive Plate Tectonics?</a> animation clips (CC BY 4.0).</li>
       <li>U.S. Geological Survey, <a href="https://www.usgs.gov/geology-and-ecology-of-national-parks/geology-hawaii-volcanoes-national-park" target="_blank" rel="noopener">Geology of Hawai‘i Volcanoes National Park</a> (age of Kauai’s rocks).</li>
     </ul>
   </div>
@@ -537,6 +579,19 @@ th{color:var(--muted);font-weight:600}
       ans.hidden = open;
       btn.setAttribute("aria-expanded", String(!open));
       btn.textContent = open ? "Show answer" : "Hide answer";
+    });
+  });
+
+  /* ---------- Videos: click to load ---------- */
+  document.querySelectorAll(".vid-load").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + btn.getAttribute("data-yt") + "?autoplay=1&rel=0";
+      f.title = btn.getAttribute("data-title");
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      f.allowFullscreen = true;
+      btn.replaceWith(f);
+      f.focus();
     });
   });
 
